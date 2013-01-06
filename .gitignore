@@ -1,8 +1,5 @@
 .cache
 .coverage
-.hg
-.hgignore
-.hgtags
 htmlcov
 tags
 
