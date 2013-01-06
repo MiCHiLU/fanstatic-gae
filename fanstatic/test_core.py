@@ -574,7 +574,8 @@ def test_library_url_hashing_recompute(tmpdir):
     time.sleep(0.02)
     # Sleep extra long on filesystems that report in seconds
     # instead of milliseconds.
-    if os.path.getmtime(os.curdir).is_integer():
+    curdir_mtime = os.path.getmtime(os.curdir)
+    if int(curdir_mtime) == curdir_mtime:
         time.sleep(1)
     resource.write('/* test */')
 

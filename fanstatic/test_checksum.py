@@ -116,7 +116,8 @@ def test_mtime(tmpdir):
     sleep = 0.02
     # Sleep extra long on filesystems that report in seconds
     # instead of milliseconds.
-    if os.path.getmtime(os.curdir).is_integer():
+    curdir_mtime = os.path.getmtime(os.curdir)
+    if int(curdir_mtime) == curdir_mtime:
         sleep += 1
 
     # Compute a first mtime for the test package:
