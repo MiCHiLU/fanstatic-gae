@@ -27,7 +27,7 @@ setup(
     ],
     keywords='',
     author='ENDOH takanao',
-    long_description=open('README.txt').read(),
+    long_description=open('README.rst').read(),
     license='BSD',
     url='http://fanstatic.org',
     packages=['fanstatic'],
