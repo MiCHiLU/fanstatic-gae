@@ -194,7 +194,11 @@ class Library(object):
 
 # Total hack to be able to get the dir the resources will be in.
 def caller_dir():
-    return os.path.dirname(sys._getframe(2).f_globals['__file__'])
+    curdir = os.path.abspath(".") + "/"
+    result = os.path.dirname(sys._getframe(2).f_globals['__file__'])
+    if result.startswith(curdir):
+        result = result.replace(curdir, "", 1)
+    return result
 
 
 class InclusionRenderers(dict):
